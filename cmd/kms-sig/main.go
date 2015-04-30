@@ -17,6 +17,7 @@ const usage = `kms-sig signs files using the AWS Key Management Service.
 Usage:
   kms-sig sign <key-id> <file> <sig> [--context=<k1=v2,k2=v2>]
   kms-sig verify <file> <sig> [--context=<k1=v2,k2=v2>]
+  kms-sig version
 
 Options:
   <key-id>      The ID of the KMS key to use.
@@ -32,7 +33,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if args["--version"] == true {
+	if args["version"] == true {
 		fmt.Printf(
 			"version: %s\ngoversion: %s\nbuildtime: %s\n",
 			version, goVersion, buildTime,
